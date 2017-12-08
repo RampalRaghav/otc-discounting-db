@@ -1,6 +1,8 @@
 package org.arpit.java2blog.model;
 
 import java.io.Serializable;
+import java.util.HashMap;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -31,6 +33,7 @@ public class StandardRuleSetup implements Serializable {
 	@Column(name="ruleNumber")
 	private Integer ruleNumber;
 	
+	HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 
 	@Column(name="customerName")
 	private String ruleName;
@@ -68,7 +71,6 @@ public class StandardRuleSetup implements Serializable {
 	
 	@Column(name = "discountRange3")
 	private Integer discountRange3;
-	
 	
 	public Account getAccount() {
 		return account;
@@ -192,12 +194,12 @@ public class StandardRuleSetup implements Serializable {
 		this.discountRange3 = discountRange3;
 	}
 
-	/*public HashMap<Integer, Integer> getMap() {
+	public HashMap<Integer, Integer> getMap() {
 		return map;
 	}
 
 	public void setMap(HashMap<Integer, Integer> map) {
 		this.map = map;
-	}*/
+	}
 
 }

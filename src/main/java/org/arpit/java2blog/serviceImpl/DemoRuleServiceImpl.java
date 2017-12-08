@@ -3,8 +3,6 @@ package org.arpit.java2blog.serviceImpl;
 import java.util.HashMap;
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import org.arpit.java2blog.dao.DemoRuleDao;
 import org.arpit.java2blog.model.Account;
 import org.arpit.java2blog.model.Discount;
@@ -20,13 +18,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class DemoRuleServiceImpl implements DemoRuleService{
-	
+
 	@Autowired
 	DemoRuleDao demoRuleDao;
-	
+
 	@Override
 	public void addRule(DemoForm demoForm) {
-		//HashMap<Integer, Integer> map = new HashMap();
+		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 		RuleSetup ruleSetup = new RuleSetup();
 		ruleSetup.setRuleNumber(demoForm.getRuleNumber());
 		ruleSetup.setRuleName(demoForm.getRuleName());
@@ -70,13 +68,13 @@ public class DemoRuleServiceImpl implements DemoRuleService{
 		ruleSetup.setQuantityRange1(demoForm.getQuantityRange1());
 		ruleSetup.setQuantityRange2(demoForm.getQuantityRange2());
 
-		/*if(demoForm.getQuantityRange1()!=null && demoForm.getDiscountRange1()!=null) {
+		if(demoForm.getQuantityRange1()!=null && demoForm.getDiscountRange1()!=null) {
 			map.put(demoForm.getQuantityRange1(), demoForm.getDiscountRange1());
 		}
 		if(demoForm.getQuantityRange2()!=null && demoForm.getDiscountRange2()!=null) {
 			map.put(demoForm.getQuantityRange2(), demoForm.getDiscountRange2());
-		}*/
-		//ruleSetup.setMap(map);
+		}
+		ruleSetup.setMap(map);
 		demoRuleDao.addRuleSetUp(ruleSetup);
 	}
 
@@ -88,56 +86,56 @@ public class DemoRuleServiceImpl implements DemoRuleService{
 
 	@Override
 	public void addStandardRule(DemoForm demoForm) {
-		//HashMap<Integer, Integer> map = new HashMap();
-				StandardRuleSetup standardRuleSetup = new StandardRuleSetup();
-				standardRuleSetup.setRuleNumber(demoForm.getRuleNumber());
-				standardRuleSetup.setRuleName(demoForm.getRuleName());
-				Account account = new Account();
-				account.setAccountNumber(demoForm.getAccountNumber());
-				if("".equals(demoForm.getAccountType())) {
-					account.setAccountType(null);
-				}else {
-					account.setAccountType(demoForm.getAccountType());
-				}
-				standardRuleSetup.setAccount(account);
-				Product product = new Product();
-				if("".equals(demoForm.getFc())) {
-					product.setFamilyCode(null);
-				}else {
-					product.setFamilyCode(demoForm.getFc());
-				}
-				product.setIsbn(demoForm.getIsbn());
-				if("".equals(demoForm.getDgp())) {
-					product.setProductGroupCode(null);
-				}else {
-					product.setProductGroupCode(demoForm.getDgp());
-				}
-				standardRuleSetup.setProduct(product);
-				Discount discount = new Discount();
-				discount.setPercentage(demoForm.getDiscount());
-				standardRuleSetup.setDiscount(discount);
-				standardRuleSetup.setDiscountRange1(demoForm.getDiscountRange1());
-				standardRuleSetup.setDiscountRange2(demoForm.getDiscountRange2());
-				standardRuleSetup.setQuantityRange1(demoForm.getQuantityRange1());
-				standardRuleSetup.setQuantityRange2(demoForm.getQuantityRange2());
-				standardRuleSetup.setQuantityRange3(demoForm.getQuantityRange3());
-				standardRuleSetup.setDiscountRange3(demoForm.getDiscountRange3());
+		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+		StandardRuleSetup standardRuleSetup = new StandardRuleSetup();
+		standardRuleSetup.setRuleNumber(demoForm.getRuleNumber());
+		standardRuleSetup.setRuleName(demoForm.getRuleName());
+		Account account = new Account();
+		account.setAccountNumber(demoForm.getAccountNumber());
+		if("".equals(demoForm.getAccountType())) {
+			account.setAccountType(null);
+		}else {
+			account.setAccountType(demoForm.getAccountType());
+		}
+		standardRuleSetup.setAccount(account);
+		Product product = new Product();
+		if("".equals(demoForm.getFc())) {
+			product.setFamilyCode(null);
+		}else {
+			product.setFamilyCode(demoForm.getFc());
+		}
+		product.setIsbn(demoForm.getIsbn());
+		if("".equals(demoForm.getDgp())) {
+			product.setProductGroupCode(null);
+		}else {
+			product.setProductGroupCode(demoForm.getDgp());
+		}
+		standardRuleSetup.setProduct(product);
+		Discount discount = new Discount();
+		discount.setPercentage(demoForm.getDiscount());
+		standardRuleSetup.setDiscount(discount);
+		standardRuleSetup.setDiscountRange1(demoForm.getDiscountRange1());
+		standardRuleSetup.setDiscountRange2(demoForm.getDiscountRange2());
+		standardRuleSetup.setQuantityRange1(demoForm.getQuantityRange1());
+		standardRuleSetup.setQuantityRange2(demoForm.getQuantityRange2());
+		standardRuleSetup.setQuantityRange3(demoForm.getQuantityRange3());
+		standardRuleSetup.setDiscountRange3(demoForm.getDiscountRange3());
 
-				/*if(demoForm.getQuantityRange1()!=null && demoForm.getDiscountRange1()!=null) {
-					map.put(demoForm.getQuantityRange1(), demoForm.getDiscountRange1());
-				}
-				if(demoForm.getQuantityRange2()!=null && demoForm.getDiscountRange2()!=null) {
-					map.put(demoForm.getQuantityRange2(), demoForm.getDiscountRange2());
-				}*/
-				//ruleSetup.setMap(map);
-				demoRuleDao.addStandradRuleSetUp(standardRuleSetup);
-		
+		if(demoForm.getQuantityRange1()!=null && demoForm.getDiscountRange1()!=null) {
+			map.put(demoForm.getQuantityRange1(), demoForm.getDiscountRange1());
+		}
+		if(demoForm.getQuantityRange2()!=null && demoForm.getDiscountRange2()!=null) {
+			map.put(demoForm.getQuantityRange2(), demoForm.getDiscountRange2());
+		}
+		standardRuleSetup.setMap(map);
+		demoRuleDao.addStandradRuleSetUp(standardRuleSetup);
+
 	}
 
 	@Override
 	public List<StandardRuleSetup> getStandardRuleSetupList() {
 		return demoRuleDao.getAllStandardRuleSetup();
-		
+
 	}
 
 	@Override
@@ -147,25 +145,25 @@ public class DemoRuleServiceImpl implements DemoRuleService{
 
 	@Override
 	public void addOrder(DemoForm demoForm) {
-			OrderLine orderLine = new OrderLine();
-			orderLine.setOrderLineId(demoForm.getOrderLineNumber());
-			Account account = new Account();
-			account.setAccountNumber(demoForm.getAccountNumber());
-			account.setAccountType(demoForm.getAccountType());
-			orderLine.setAccount(account);
-			Product product = new Product();
-			product.setFamilyCode(demoForm.getFc());
-			product.setIsbn(demoForm.getIsbn());
-			product.setProductGroupCode(demoForm.getDgp());
-			orderLine.setProduct(product);
-			orderLine.setQuantity(demoForm.getQuantity());
-			demoRuleDao.addOrderLineSetUp(orderLine);
+		OrderLine orderLine = new OrderLine();
+		orderLine.setOrderLineId(demoForm.getOrderLineNumber());
+		Account account = new Account();
+		account.setAccountNumber(demoForm.getAccountNumber());
+		account.setAccountType(demoForm.getAccountType());
+		orderLine.setAccount(account);
+		Product product = new Product();
+		product.setFamilyCode(demoForm.getFc());
+		product.setIsbn(demoForm.getIsbn());
+		product.setProductGroupCode(demoForm.getDgp());
+		orderLine.setProduct(product);
+		orderLine.setQuantity(demoForm.getQuantity());
+		demoRuleDao.addOrderLineSetUp(orderLine);
 
-		}
-		
 	}
-	
-	
-	
-   
+
+}
+
+
+
+
 
