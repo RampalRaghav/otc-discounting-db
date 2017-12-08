@@ -1,4 +1,4 @@
-package com.daoImpl;
+package org.arpit.java2blog.daoImpl;
 
 import java.util.List;
 
@@ -6,16 +6,15 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
+import org.arpit.java2blog.dao.DemoRuleDao;
+import org.arpit.java2blog.model.OrderLine;
+import org.arpit.java2blog.model.RuleSetup;
+import org.arpit.java2blog.model.StandardRuleSetup;
 import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
-
-import com.dao.DemoRuleDao;
-import com.model.OrderLine;
-import com.model.RuleSetup;
-import com.model.StandardRuleSetup;;
+import org.springframework.stereotype.Repository;;
 
 @Repository
 public class DemoRuleDaoImpl implements DemoRuleDao {

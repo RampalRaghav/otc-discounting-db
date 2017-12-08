@@ -1,4 +1,4 @@
-package com.revListner;
+package org.arpit.java2blog.revListner;
 
 
 import org.hibernate.envers.RevisionListener;

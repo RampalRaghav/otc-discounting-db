@@ -1,11 +1,11 @@
-package com.service;
+package org.arpit.java2blog.service;
 
 import java.util.List;
 
-import com.form.DemoForm;
-import com.model.OrderLine;
-import com.model.RuleSetup;
-import com.model.StandardRuleSetup;
+import org.arpit.java2blog.model.OrderLine;
+import org.arpit.java2blog.model.RuleSetup;
+import org.arpit.java2blog.model.StandardRuleSetup;
+import org.arpit.java2blog.model.form.DemoForm;
 
 
 public interface DemoRuleService<T> {

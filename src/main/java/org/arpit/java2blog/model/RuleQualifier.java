@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.model;
+package org.arpit.java2blog.model;
 
 /**
  * @author raghav.rampal

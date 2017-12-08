@@ -1,23 +1,22 @@
-package com.serviceImpl;
+package org.arpit.java2blog.serviceImpl;
 
 import java.util.HashMap;
 import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.arpit.java2blog.dao.DemoRuleDao;
+import org.arpit.java2blog.model.Account;
+import org.arpit.java2blog.model.Discount;
+import org.arpit.java2blog.model.Offer;
+import org.arpit.java2blog.model.OrderLine;
+import org.arpit.java2blog.model.Product;
+import org.arpit.java2blog.model.RuleSetup;
+import org.arpit.java2blog.model.StandardRuleSetup;
+import org.arpit.java2blog.model.form.DemoForm;
+import org.arpit.java2blog.service.DemoRuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.dao.DemoRuleDao;
-import com.form.DemoForm;
-import com.model.Account;
-import com.model.Discount;
-import com.model.Offer;
-import com.model.OrderLine;
-import com.model.Product;
-import com.model.RuleSetup;
-import com.model.StandardRuleSetup;
-import com.service.DemoRuleService;
 
 @Service
 public class DemoRuleServiceImpl implements DemoRuleService{

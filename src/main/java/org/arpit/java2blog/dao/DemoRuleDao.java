@@ -1,10 +1,10 @@
-package com.dao;
+package org.arpit.java2blog.dao;
 
 import java.util.List;
 
-import com.model.OrderLine;
-import com.model.RuleSetup;
-import com.model.StandardRuleSetup;;
+import org.arpit.java2blog.model.OrderLine;
+import org.arpit.java2blog.model.RuleSetup;
+import org.arpit.java2blog.model.StandardRuleSetup;;
 
 public interface DemoRuleDao {
 	

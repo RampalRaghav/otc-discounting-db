@@ -1,11 +1,10 @@
-package com.model;
+package org.arpit.java2blog.model;
 
 
+import org.arpit.java2blog.revListner.*;
 import org.hibernate.envers.RevisionEntity;
 import org.hibernate.envers.RevisionNumber;
 import org.hibernate.envers.RevisionTimestamp;
-
-import com.revListner.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

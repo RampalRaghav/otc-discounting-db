@@ -1,14 +1,13 @@
-package com.controller;
+package org.arpit.java2blog.controller;
 
+import  org.arpit.java2blog.model.form.DemoForm;
+import org.arpit.java2blog.service.DemoRuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import com.form.DemoForm;
-import com.service.DemoRuleService;
 
 
 @Controller

@@ -1,4 +1,4 @@
-package com.config;
+package org.arpit.java2blog;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

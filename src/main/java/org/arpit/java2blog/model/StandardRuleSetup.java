@@ -1,4 +1,4 @@
-package com.model;
+package org.arpit.java2blog.model;
 
 import java.io.Serializable;
 import javax.persistence.Column;
@@ -19,8 +19,8 @@ import javax.persistence.CascadeType;
  */
 @Entity
 @Audited
-@Table(name="Rule_SetUp")
-public class RuleSetup implements Serializable {
+@Table(name="StandardRule_SetUp")
+public class StandardRuleSetup implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name="id")
@@ -41,8 +41,6 @@ public class RuleSetup implements Serializable {
 	private Product product;
 	@OneToOne(cascade = CascadeType.ALL,targetEntity=Discount.class)
 	private Discount discount;
-	@OneToOne(cascade = CascadeType.ALL,targetEntity=Offer.class)
-	private Offer offer;
 	
 	@Column(name = "isActive")
 	private boolean isActive;
@@ -52,9 +50,6 @@ public class RuleSetup implements Serializable {
 	
 	@Column(name = "isWinner")
 	private Boolean isWinner;
-	
-	@Column(name = "winningPriority")
-	private String winningPriority ;
 	
 	@Column(name = "discountRange1")
 	private Integer discountRange1;
@@ -67,6 +62,12 @@ public class RuleSetup implements Serializable {
 	
 	@Column(name = "quantityRange2")
 	private Integer quantityRange2;
+	
+	@Column(name = "quantityRange3")
+	private Integer quantityRange3;
+	
+	@Column(name = "discountRange3")
+	private Integer discountRange3;
 	
 	
 	public Account getAccount() {
@@ -95,14 +96,6 @@ public class RuleSetup implements Serializable {
 		this.discount = discount;
 	}
 
-	public Offer getOffer() {
-		return offer;
-	}
-
-	public void setOffer(Offer offer) {
-		this.offer = offer;
-	}
-	
 	public String getRuleName() {
 		return ruleName;
 	}
@@ -125,14 +118,6 @@ public class RuleSetup implements Serializable {
 
 	public void setIsQualified(Boolean isQualified) {
 		this.isQualified = isQualified;
-	}
-
-	public String getWinningPriority() {
-		return winningPriority;
-	}
-
-	public void setWinningPriority(String winningPriority) {
-		this.winningPriority = winningPriority;
 	}
 
 	public Boolean getIsWinner() {
@@ -189,6 +174,22 @@ public class RuleSetup implements Serializable {
 
 	public void setActive(boolean isActive) {
 		this.isActive = isActive;
+	}
+
+	public Integer getQuantityRange3() {
+		return quantityRange3;
+	}
+
+	public void setQuantityRange3(Integer quantityRange3) {
+		this.quantityRange3 = quantityRange3;
+	}
+
+	public Integer getDiscountRange3() {
+		return discountRange3;
+	}
+
+	public void setDiscountRange3(Integer discountRange3) {
+		this.discountRange3 = discountRange3;
 	}
 
 	/*public HashMap<Integer, Integer> getMap() {

@@ -1,4 +1,4 @@
-package com.form;
+package org.arpit.java2blog.model.form;
 
 /**
  * @author raghav.rampal

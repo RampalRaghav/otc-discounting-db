@@ -1,4 +1,4 @@
-package com.model;
+package org.arpit.java2blog.model;
 
 import java.io.Serializable;
 import java.util.Objects;

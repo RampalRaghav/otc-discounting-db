@@ -1,4 +1,4 @@
-package com.config;	
+package org.arpit.java2blog;	
 import java.util.Properties;
 
 import javax.sql.DataSource;
